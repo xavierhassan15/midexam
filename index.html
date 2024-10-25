@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Horizons Film Festival</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Cinema Horizons Film Festival</h1>
+        <p class="dates">October 5 - 10, 2024</p>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="menu-items">
+                <a href="#home">Home</a>
+                <a href="#films">Films</a>
+                <a href="#schedule">Schedule</a>
+                <a href="#tickets">Tickets</a>
+                <a href="#about">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h2>Welcome to Cinema Horizons</h2>
+        <p>Celebrating the best in independent cinema</p>
+        <img src="festival-banner.jpg" alt="Film Festival Banner" class="hero-image">
+    </section>
+
+    <section class="festival-info">
+        <h3>About the Festival</h3>
+        <p>Join us for six days of groundbreaking films, engaging discussions, and unforgettable experiences. Cinema Horizons brings together filmmakers and film lovers from around the world.</p>
+    </section>
+
+
+    <section class="highlights">
+        <h3>Festival Highlights</h3>
+        <ul>
+            <li>Over 100 independent films</li>
+            <li>Q&A sessions with directors</li>
+            <li>Workshops and masterclasses</li>
+            <li>Opening and closing night galas</li>
+        </ul>
+    </section>
+    <section class="overview">
+        <p>Celebrating Independent Cinema</p>
+        <button onclick="buyTickets()">Buy Tickets</button>
+        <button onclick="viewSchedule()">View Schedule</button>
+    </section>
+
+    <section class="filter">
+        <label for="genre-filter">Filter by Genre:</label>
+        <select id="genre-filter" onchange="filterFilms()">
+            <option value="all">All</option>
+            <option value="drama">Drama</option>
+            <option value="comedy">Comedy</option>
+            <option value="documentary">Documentary</option>
+            <option value="horror">Horror</option>
+            <option value="animated">Animated</option>
+        </select>
+    </section>
+
+    <section class="featured-films">
+        <h2>Featured Films</h2>
+        <div class="films-container" id="films-container">
+            <div class="film" data-genre="drama" onclick="showFilmDetails('Oppen Heimer', 'This is a synopsis for Oppen Heimer.')">
+                <img src="oppenheimer.jpeg" alt="Oppen Heimer">
+                <p>Film Title 1</p>
+            </div>
+            <div class="film" data-genre="comedy" onclick="showFilmDetails('Hangover', 'This is a synopsis for Hangoverw.')">
+                <img src="hangover.jpeg" alt="Film 2">
+                <p>Film Title 2</p>
+            </div>
+            <div class="film" data-genre="documentary" onclick="showFilmDetails('All That Breathes', 'This is a synopsis for All That Breathes.')">
+                <img src="All that breathes.jpeg" alt="Film 3">
+                <p>Film Title 3</p>
+            </div>
+            <div class="film" data-genre="horror" onclick="showFilmDetails('Inherit the witch', 'This is a synopsis for Inherit the witch.')">
+                <img src="inherit the witch.jpeg" alt="Film 4">
+                <p>Film Title 4</p>
+            </div>
+            <div class="film" data-genre="animated" onclick="showFilmDetails('Kung Fu Panda', 'This is a synopsis for Kung Fu Panda.')">
+                <img src="kung fu panda.jpeg" alt="Film 5">
+                <p>Film Title 5</p>
+            </div>
+            <!-- Add more films with corresponding genres as needed -->
+        </div>
+    </section>
+
+    <!-- Modal for Film Details -->
+    <div id="filmModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="filmTitle"></h2>
+            <p id="filmSynopsis"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

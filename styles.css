@@ -1,0 +1,341 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1A1A2E;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}   
+
+header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Add this to your existing styles.css file */
+
+.hamburger-menu {
+    display: flex;
+}
+
+.hamburger-icon {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.hamburger-icon span {
+    width: 30px;
+    height: 3px;
+    background: #FAD02E;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 300px;
+    background-color: #1A1A2E;
+    padding-top: 60px;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%);
+}
+
+.menu-items a {
+    padding: 15px 25px;
+    color: #FAD02E;
+    text-decoration: none;
+    transition: color 0.3s linear;
+}
+
+.menu-items a:hover {
+    color: #FFC107;
+}
+
+@media (min-width: 767px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    .hamburger-icon {
+        display: flex;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+    }
+
+    .menu-open .menu-items {
+        transform: translateX(0);
+    }
+
+    .menu-open .hamburger-icon span:first-child {
+        transform: rotate(45deg);
+    }
+
+    .menu-open .hamburger-icon span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-open .hamburger-icon span:nth-child(3) {
+        transform: rotate(-45deg);
+    }
+}
+
+header h1 {
+    font-size: 1.8em;
+    color: #FAD02E;
+}
+
+.dates {
+    color: #AAA;
+}
+
+.overview {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.overview p {
+    font-size: 1.2em;
+}
+
+button {
+    background-color: #FAD02E;
+    color: #1A1A2E;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #FFC107;
+}
+
+.filter {
+    margin: 15px 0;
+    width: 20%;
+}
+
+.filter label,
+.filter select {
+    font-size: 1em;
+    color: #FFF;
+}
+
+.featured-films {
+    width: 90%;
+    text-align: center;
+}
+
+.featured-films h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.films-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.film {
+    background-color: #333;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    width: calc(33.33% - 20px);
+    max-width: 300px;
+}
+
+.film img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.film p {
+    color: #FAD02E;
+    margin-top: 5px;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: #1A1A2E;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 10px;
+    color: #FFF;
+}
+
+.modal-content h2 {
+    color: #FAD02E;
+}
+
+.close {
+    color: #FFF;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #FFC107;
+}
+
+/* Mobile Responsive Styles */
+@media (min-width: 768px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .overview p {
+        font-size: 1em;
+    }
+
+    button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    .featured-films h2 {
+        font-size: 1.3em;
+    }
+
+    .film {
+        width: calc(50% - 20px);
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+}
+
+@media (min-width: 480px) {
+    header h1 {
+        font-size: 1.2em;
+    }
+
+    .overview p {
+        font-size: 0.9em;
+    }
+
+    button {
+        padding: 6px 10px;
+        font-size: 0.8em;
+    }
+
+    .featured-films h2 {
+        font-size: 1.2em;
+    }
+
+    .film {
+        width: 100%;
+    }
+
+    .filter select {
+        width: 100%;
+    }
+}
+
+/* Add this to your existing styles.css file */
+
+.hero {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.hero h2 {
+    color: #FAD02E;
+    margin-bottom: 0.5rem;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.festival-info, .highlights {
+    background-color: #2A2A3E;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.highlights ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.highlights li {
+    margin-bottom: 0.5rem;
+}
+
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #2A2A3E;
+}
+
+@media (min-width: 768px) {
+    .hero h2 {
+        font-size: 1.5em;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .cta-buttons button {
+        width: 100%;
+    }
+}
