@@ -24,6 +24,22 @@ function filterFilms() {
     }
 }
 
+// Add this to your existing script.js file
+
+function toggleMenu() {
+    const menu = document.querySelector('.hamburger-menu');
+    menu.classList.toggle('menu-open');
+}
+
+// Close menu when clicking outside
+document.addEventListener('click', function(event) {
+    const menu = document.querySelector('.hamburger-menu');
+    const hamburgerIcon = document.querySelector('.hamburger-icon');
+    if (!menu.contains(event.target) && !hamburgerIcon.contains(event.target)) {
+        menu.classList.remove('menu-open');
+    }
+});
+
 // Function to show film details in a modal
 function showFilmDetails(title, synopsis) {
     document.getElementById("filmTitle").textContent = title;

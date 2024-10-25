@@ -18,6 +18,89 @@ header {
     margin-top: 20px;
 }
 
+/* Add this to your existing styles.css file */
+
+.hamburger-menu {
+    display: ;
+}
+
+.hamburger-icon {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.hamburger-icon span {
+    width: 30px;
+    height: 3px;
+    background: #FAD02E;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 300px;
+    background-color: #1A1A2E;
+    padding-top: 60px;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%);
+}
+
+.menu-items a {
+    padding: 15px 25px;
+    color: #FAD02E;
+    text-decoration: none;
+    transition: color 0.3s linear;
+}
+
+.menu-items a:hover {
+    color: #FFC107;
+}
+
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    .hamburger-icon {
+        display: flex;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+    }
+
+    .menu-open .menu-items {
+        transform: translateX(0);
+    }
+
+    .menu-open .hamburger-icon span:first-child {
+        transform: rotate(45deg);
+    }
+
+    .menu-open .hamburger-icon span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-open .hamburger-icon span:nth-child(3) {
+        transform: rotate(-45deg);
+    }
+}
+
 header h1 {
     font-size: 1.8em;
     color: #FAD02E;
@@ -53,7 +136,7 @@ button:hover {
 
 .filter {
     margin: 15px 0;
-    width: 90%; /* Make the filter section responsive */
+    width: 90%;
 }
 
 .filter label,
@@ -74,9 +157,9 @@ button:hover {
 
 .films-container {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-    overflow-y: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 .film {
@@ -85,10 +168,12 @@ button:hover {
     padding: 10px;
     text-align: center;
     cursor: pointer;
+    width: calc(33.33% - 20px);
+    max-width: 300px;
 }
 
 .film img {
-    width: 30%;
+    width: 100%;
     border-radius: 5px;
 }
 
@@ -137,57 +222,120 @@ button:hover {
     color: #FFC107;
 }
 
-/* Responsive Styles */
+/* Mobile Responsive Styles */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 1.5em; /* Smaller title for mobile */
+        font-size: 1.5em;
     }
 
     .overview p {
-        font-size: 1em; /* Smaller overview text */
+        font-size: 1em;
     }
 
     button {
-        padding: 8px 15px; /* Smaller button size */
-        font-size: 0.9em; /* Smaller font size */
+        padding: 8px 15px;
+        font-size: 0.9em;
     }
 
     .featured-films h2 {
-        font-size: 1.3em; /* Smaller heading */
-    }
-
-    .films-container {
-        flex-direction: column; /* Stack films vertically */
+        font-size: 1.3em;
     }
 
     .film {
-        padding: 8px; /* Smaller padding */
+        width: calc(50% - 20px);
     }
 
     .modal-content {
-        width: 90%; /* Wider modal for mobile */
+        width: 90%;
     }
 }
 
 @media (max-width: 480px) {
     header h1 {
-        font-size: 1.2em; /* Even smaller title */
+        font-size: 1.2em;
     }
 
     .overview p {
-        font-size: 0.9em; /* Even smaller overview text */
+        font-size: 0.9em;
     }
 
     button {
-        padding: 6px 10px; /* Even smaller button size */
-        font-size: 0.8em; /* Even smaller font size */
+        padding: 6px 10px;
+        font-size: 0.8em;
     }
 
     .featured-films h2 {
-        font-size: 1.2em; /* Smaller heading */
+        font-size: 1.2em;
     }
 
-    .film img {
-        height: auto; /* Maintain aspect ratio */
+    .film {
+        width: 100%;
+    }
+
+    .filter select {
+        width: 100%;
+    }
+}
+
+/* Add this to your existing styles.css file */
+
+.hero {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.hero h2 {
+    color: #FAD02E;
+    margin-bottom: 0.5rem;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.festival-info, .highlights {
+    background-color: #2A2A3E;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.highlights ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.highlights li {
+    margin-bottom: 0.5rem;
+}
+
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #2A2A3E;
+}
+
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 1.5em;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .cta-buttons button {
+        width: 100%;
     }
 }
