@@ -3,104 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cinema Horizons Film Festival</title>
+    <title>Film Festival</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Cinema Horizons Film Festival</h1>
-        <p class="dates">October 5 - 10, 2024</p>
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <nav class="menu-items">
-                <a href="#home">Home</a>
-                <a href="#films">Films</a>
-                <a href="#schedule">Schedule</a>
-                <a href="#tickets">Tickets</a>
-                <a href="#about">About</a>
-            </nav>
-        </div>
+        <nav>
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Program</a></li>
+                <li><a href="#">Join</a></li>
+                <li><a href="#">Sponsors</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">My Page</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+        <h1 class="head1">Cinema Horizons <br>Film Festival</h1>
     </header>
 
-    <section class="hero">
-        <h2>Welcome to Cinema Horizons</h2>
-        <p>Celebrating the best in independent cinema</p>
-        <img src="festival-banner.jpg" alt="Film Festival Banner" class="hero-image">
-    </section>
-
-    <section class="festival-info">
-        <h3>About the Festival</h3>
-        <p>Join us for six days of groundbreaking films, engaging discussions, and unforgettable experiences. Cinema Horizons brings together filmmakers and film lovers from around the world.</p>
-    </section>
-
-
-    <section class="highlights">
-        <h3>Festival Highlights</h3>
-        <ul>
-            <li>Over 100 independent films</li>
-            <li>Q&A sessions with directors</li>
-            <li>Workshops and masterclasses</li>
-            <li>Opening and closing night galas</li>
-        </ul>
-    </section>
-    <section class="overview">
-        <p>Celebrating Independent Cinema</p>
-        <button onclick="buyTickets()">Buy Tickets</button>
-        <button onclick="viewSchedule()">View Schedule</button>
-    </section>
-
-    <section class="filter">
-        <label for="genre-filter">Filter by Genre:</label>
-        <select id="genre-filter" onchange="filterFilms()">
-            <option value="all">All</option>
-            <option value="drama">Drama</option>
-            <option value="comedy">Comedy</option>
-            <option value="documentary">Documentary</option>
-            <option value="horror">Horror</option>
-            <option value="animated">Animated</option>
-        </select>
-    </section>
-
-    <section class="featured-films">
-        <h2>Featured Films</h2>
-        <div class="films-container" id="films-container">
-            <div class="film" data-genre="drama" onclick="showFilmDetails('Oppen Heimer', 'This is a synopsis for Oppen Heimer.')">
-                <img src="oppenheimer.jpeg" alt="Oppen Heimer">
-                <p>Film Title 1</p>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2 class="head2">"You won't want to miss this!"</h2>
+                <h1 class="head3">Cinema Horizons <br> Film Festival <br> OCT 2024 </h1>
+                <p>Our film festival is a celebration of cinematic excellence,<br> showcasing a diverse range of films from around the world. <br> We aim to inspire, entertain, and educate our audience <br> through the power of storytelling.</p>
+                <p class="dates">October 5 - 10, 2024</p>
+                <p>Join us for a week of unforgettable film experiences, including:</p>
             </div>
-            <div class="film" data-genre="comedy" onclick="showFilmDetails('Hangover', 'This is a synopsis for Hangoverw.')">
-                <img src="hangover.jpeg" alt="Film 2">
-                <p>Film Title 2</p>
+        </section>
+
+        
+        <section class="page2">
+            <br>
+        <h2 class="head4">Featured Films</h2>
+        <section class="movies">
+            <div class="movie">
+                <img src="All that breathes.jpeg" alt="All that breathes" class="movie-image">
+                <h3 class="movie-name">All That Breathes</h3>
+                <p class="para1">All That Breathes, directed by Shaunak Sen follows two brothers who run a bird hospital dedicated to rescuing injured black kites, a staple in the skies of New Delhi, India.
+                </p>
             </div>
-            <div class="film" data-genre="documentary" onclick="showFilmDetails('All That Breathes', 'This is a synopsis for All That Breathes.')">
-                <img src="All that breathes.jpeg" alt="Film 3">
-                <p>Film Title 3</p>
+            <div class="movie">
+                <img src="hangover.jpeg" alt="hangover" class="movie-image">
+                <h3 class="movie-name">Hangover</h3>
+                <p class="para1">The story was about three friends who lose the groom at his Las Vegas bachelor party and then must retrace their steps to figure out what happened.
+                </p>
             </div>
-            <div class="film" data-genre="horror" onclick="showFilmDetails('Inherit the witch', 'This is a synopsis for Inherit the witch.')">
-                <img src="inherit the witch.jpeg" alt="Film 4">
-                <p>Film Title 4</p>
+            <div class="movie">
+                <img src="inherit the witch.jpeg" alt="inherit the witch" class="movie-image">
+                <h3 class="movie-name">Inherit The Witch</h3>
+                <p class="para1">Synopsis In 1984, a family throws a birthday party for twins Cory and Jessie. 30 years later, what's left of the family reunites for the father's funeral, at two isolated houses in the New Forest, England, historically a hotbed of witchcraft.
+                </p>
             </div>
-            <div class="film" data-genre="animated" onclick="showFilmDetails('Kung Fu Panda', 'This is a synopsis for Kung Fu Panda.')">
-                <img src="kung fu panda.jpeg" alt="Film 5">
-                <p>Film Title 5</p>
+            <div class="movie">
+                <img src="kung fu panda.jpeg" alt="Kung fu panda"  class="movie-image">
+                <h3 class="movie-name">Kung Fu Panda</h3>
+                <p class="para1">After Po is tapped to become the Spiritual Leader of the Valley of Peace, he needs to find and train a new Dragon Warrior, while a wicked sorceress plans to re-summon all the master villains whom Po has vanquished to the spirit realm.
+                </p>
             </div>
-            <!-- Add more films with corresponding genres as needed -->
-        </div>
+            <div class="movie">
+                <img src="oppenheimer.jpeg" alt="oppenheimer"  class="movie-image">
+                <h3 class="movie-name">OPPENHEIMER</h3>
+                <p class="para1">Oppenheimer is a 2023 biographical film written, directed, and produced by Christopher Nolan. An epic with aspects of a thriller, it follows the life of J. Robert Oppenheimer, the American theoretical physicist who helped develop the first nuclear weapons during World War II.
+                </p>
+            </div>
+            <div class="movie">
+                <img src="Rampage.jpeg" alt="Rampage"   class="movie-image">
+                <h3 class="movie-name">Rampage</h3>
+                <p class="para1">It follows a primatologist who must team up with George, a leucistic western lowland gorilla who turns into a raging creature of enormous size and growing into bigger and larger sizes as a result of a rogue experiment, to stop two other mutated animals from destroying Chicago.
+                </p>
+            </div>
+        </section>
     </section>
 
-    <!-- Modal for Film Details -->
-    <div id="filmModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2 id="filmTitle"></h2>
-            <p id="filmSynopsis"></p>
-        </div>
-    </div>
+    <section class="page3"></section>
+    </main>
 
-    <script src="script.js"></script>
+    <footer>
+        <section class="partner-section">
+            <h2 class="partner-heading">Partner</h2>
+            <div class="partner-logos">
+              <img src="mozila logo.png" alt="Mozilla Logo">
+              <img src="google logo.png" alt="Google Logo">
+              <img src="naver logo.png" alt="NAVER Logo">
+              <img src="airbnb logo.png" alt="Airbnb Logo">
+            </div>
+          </section>
+        <p>&copy; 2023 Film Festival</p>
+    </footer>
 </body>
 </html>
