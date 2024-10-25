@@ -21,7 +21,7 @@ header {
 /* Add this to your existing styles.css file */
 
 .hamburger-menu {
-    display: ;
+    display: flex;
 }
 
 .hamburger-icon {
@@ -72,7 +72,7 @@ header {
     color: #FFC107;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 767px) {
     .hamburger-menu {
         display: block;
     }
