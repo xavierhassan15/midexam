@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Horizons Film Festival</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Cinema Horizons Film Festival</h1>
+        <p class="dates">October 5 - 10, 2024</p>
+    </header>
+
+    <section class="overview">
+        <p>Celebrating Independent Cinema</p>
+        <button onclick="buyTickets()">Buy Tickets</button>
+        <button onclick="viewSchedule()">View Schedule</button>
+    </section>
+
+    <section class="filter">
+        <label for="genre-filter">Filter by Genre:</label>
+        <select id="genre-filter" onchange="filterFilms()">
+            <option value="all">All</option>
+            <option value="drama">Drama</option>
+            <option value="comedy">Comedy</option>
+            <option value="documentary">Documentary</option>
+            <option value="horror">Horror</option>
+            <option value="animated">Animated</option>
+        </select>
+    </section>
+
+    <section class="featured-films">
+        <h2>Featured Films</h2>
+        <div class="films-container" id="films-container">
+            <div class="film" data-genre="drama" onclick="showFilmDetails('Oppen Heimer', 'This is a synopsis for Oppen Heimer.')">
+                <img src="oppenheimer.jpeg" alt="Oppen Heimer">
+                <p>Film Title 1</p>
+            </div>
+            <div class="film" data-genre="comedy" onclick="showFilmDetails('Hangover', 'This is a synopsis for Hangover.')">
+                <img src="hangover.jpeg" alt="Film 2">
+                <p>Film Title 2</p>
+            </div>
+            <div class="film" data-genre="documentary" onclick="showFilmDetails('Film Title 3', 'This is a synopsis for Film Title 3.')">
+                <img src="film3.jpg" alt="Film 3">
+                <p>Film Title 3</p>
+            </div>
+            <div class="film" data-genre="horror" onclick="showFilmDetails('Film Title 4', 'This is a synopsis for Film Title 4.')">
+                <img src="film4.jpg" alt="Film 4">
+                <p>Film Title 4</p>
+            </div>
+            <div class="film" data-genre="animated" onclick="showFilmDetails('Film Title 5', 'This is a synopsis for Film Title 5.')">
+                <img src="film5.jpg" alt="Film 5">
+                <p>Film Title 5</p>
+            </div>
+            <!-- Add more films with corresponding genres as needed -->
+        </div>
+    </section>
+
+    <!-- Modal for Film Details -->
+    <div id="filmModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="filmTitle"></h2>
+            <p id="filmSynopsis"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

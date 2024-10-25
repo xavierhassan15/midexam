@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1A1A2E;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+header h1 {
+    font-size: 1.8em;
+    color: #FAD02E;
+}
+
+.dates {
+    color: #AAA;
+}
+
+.overview {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.overview p {
+    font-size: 1.2em;
+}
+
+button {
+    background-color: #FAD02E;
+    color: #1A1A2E;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #FFC107;
+}
+
+.filter {
+    margin: 15px 0;
+    width: 90%; /* Make the filter section responsive */
+}
+
+.filter label,
+.filter select {
+    font-size: 1em;
+    color: #FFF;
+}
+
+.featured-films {
+    width: 90%;
+    text-align: center;
+}
+
+.featured-films h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.films-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+}
+
+.film {
+    background-color: #333;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.film img {
+    width: 30%;
+    border-radius: 5px;
+}
+
+.film p {
+    color: #FAD02E;
+    margin-top: 5px;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: #1A1A2E;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 10px;
+    color: #FFF;
+}
+
+.modal-content h2 {
+    color: #FAD02E;
+}
+
+.close {
+    color: #FFF;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #FFC107;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5em; /* Smaller title for mobile */
+    }
+
+    .overview p {
+        font-size: 1em; /* Smaller overview text */
+    }
+
+    button {
+        padding: 8px 15px; /* Smaller button size */
+        font-size: 0.9em; /* Smaller font size */
+    }
+
+    .featured-films h2 {
+        font-size: 1.3em; /* Smaller heading */
+    }
+
+    .films-container {
+        flex-direction: column; /* Stack films vertically */
+    }
+
+    .film {
+        padding: 8px; /* Smaller padding */
+    }
+
+    .modal-content {
+        width: 90%; /* Wider modal for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2em; /* Even smaller title */
+    }
+
+    .overview p {
+        font-size: 0.9em; /* Even smaller overview text */
+    }
+
+    button {
+        padding: 6px 10px; /* Even smaller button size */
+        font-size: 0.8em; /* Even smaller font size */
+    }
+
+    .featured-films h2 {
+        font-size: 1.2em; /* Smaller heading */
+    }
+
+    .film img {
+        height: auto; /* Maintain aspect ratio */
+    }
+}
